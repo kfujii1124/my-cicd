@@ -1,12 +1,15 @@
 name: Change shell
 on: push
+defaults:
+  run:
+    shell: bash # デフォルトのシェルをBashに設定
 jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - shell: bash          # シェルにBashを指定
+      - shell: bash # シェルにBashを指定
         run: echo "${SHELL}"
-      - shell: python        # シェルにPythonを指定
+      - shell: python # シェルにPythonを指定
         run: |
           import os
           print(os.environ['PATH'])
